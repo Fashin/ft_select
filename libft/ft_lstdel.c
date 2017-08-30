@@ -6,11 +6,10 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 12:46:45 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/08/08 20:05:50 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/08/30 19:02:15 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
 #include "libft.h"
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))

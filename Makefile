@@ -6,18 +6,18 @@
 #    By: cbeauvoi <cbeauvoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 11:08:40 by cbeauvoi          #+#    #+#              #
-#    Updated: 2017/08/30 18:46:46 by cbeauvoi         ###   ########.fr        #
+#    Updated: 2017/08/30 19:45:52 by cbeauvoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-CFLAGS += -Wall -Wextra -Werror -g
+CFLAGS += -Wall -Wextra -Werror
 
 SRCS = ft_select.c 
 
 LIB = ./libft/libft.a
-CC = @cc
+CC = gcc
 SRC = $(addprefix src/, $(SRCS))
 OBJ = $(SRC:.c=.o)
 
@@ -34,7 +34,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make re -C libft/
 	@echo $(C_DURING)"Compiling" [ $(NAME) . . . ]
-	$(CC) $(OBJ) $(LIB) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME) -ltermcap
 	@echo $(SUCCESS) $(RESET)
 
 cc:

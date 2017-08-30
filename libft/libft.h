@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 12:41:11 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/08/22 14:54:22 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/08/30 19:19:41 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_list					*ft_lstselectsort(t_list *list,
 						int (*cmp)(void *, void *));
 size_t					ft_strlcat(char *s1, const char *s2, size_t n);
 size_t					ft_strlen(const char *str);
-size_t					ft_getarraysize(char **tab);
 void					ft_lstreverse(t_list **lst);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void					ft_lstclear(void *conten, size_t content_size);

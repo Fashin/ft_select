@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_control.c                                     :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/02 16:53:13 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 22:09:48 by cbeauvoi         ###   ########.fr       */
+/*   Created: 2017/09/04 22:23:07 by cbeauvoi          #+#    #+#             */
+/*   Updated: 2017/09/04 22:34:27 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_select.h"
 
-t_list		*get_actual(t_list *list)
+void		free_my_list(void *content, size_t size)
 {
-	while (list->content)
-	{
-		if (((t_file *)list->content)->is_actual)
-			return (list);
-		list = list->next;
-	}
-	return (NULL);
+	free((void *)((t_file *)content)->name);
+	//free((void *)((t_file *)content)->is_selected);
+	//free((void *)((t_file *)content)->is_actual);
+	free(content);
+	content = NULL;
+	size = 0;
 }
 
-t_list		*get_last(t_list *list)
+int			ft_exit(t_list **list)
 {
-	while (list->next->content)
-		list = list->next;
-	return (list);
-}
-
-int			ft_pointchar(int c)
-{
-	write(STDIN_FILENO, &c, 1);
-	return (0);
-}
-
-void		clean_screen(void)
-{
-	tputs(tgetstr("cl", NULL), 0, ft_pointchar);
+	print_selected(*list);
+	ft_lstdel(list, free_my_list);	
+	tputs(tgetstr("ve", NULL), 1, ft_pointchar);
+	return (1);
 }

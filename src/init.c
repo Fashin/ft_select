@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 15:19:47 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 18:24:51 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/04 22:30:52 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_list					*create_my_list(char **input)
 		{
 			file.name = ft_strdup(input[i]);
 			file.is_actual = (i == 0) ? 1 : 0;
+			file.is_selected = 0;
 			ft_lstadd(&list, ft_lstnew((void *)&file, sizeof(t_file)));
 			i--;
 		}
@@ -54,5 +55,6 @@ t_list					*init(char **input)
 		return (NULL);
 	if (!(apply_cannonique(term)))
 		return (NULL);
+	tputs(tgetstr("vi", NULL), 1, ft_pointchar);
 	return (create_my_list(input));
 }

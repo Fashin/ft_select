@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_select.c                                        :+:      :+:    :+:   */
+/*   ft_arraysize.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/30 18:47:10 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/02 16:25:09 by cbeauvoi         ###   ########.fr       */
+/*   Created: 2017/09/04 18:14:56 by cbeauvoi          #+#    #+#             */
+/*   Updated: 2017/09/04 18:19:35 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_select.h"
+#include "libft.h"
 
-int					main(int ac, char **av)
+int			ft_getabsize(char **tab)
 {
-	t_list		*list;
+	int		i;
 
-	if (ac < 2)
-		return (-1);
-	if (!(list = init(av + 1)))
-		return (-1);
-	return (launch_select(list));
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 #    By: cbeauvoi <cbeauvoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 11:08:40 by cbeauvoi          #+#    #+#              #
-#    Updated: 2017/08/30 19:45:52 by cbeauvoi         ###   ########.fr        #
+#    Updated: 2017/09/02 16:54:43 by cbeauvoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = a.out
 
 CFLAGS += -Wall -Wextra -Werror
 
-SRCS = ft_select.c 
+SRCS = 	ft_select.c init.c launch_select.c arrow_control.c print_list.c \
+	  	file_control.c 
 
 LIB = ./libft/libft.a
 CC = gcc

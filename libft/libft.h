@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 12:41:11 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/08/30 19:19:41 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/04 18:20:50 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ char					*ft_strmapi(char const *s,
 char					*ft_strsub(char const *s, unsigned int start,
 						size_t len);
 char					**ft_strsplit(char const *s, char c);
+int						ft_getabsize(char **my_tab);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
 int						ft_strequ(char const *s1, char const *s2);
 int						ft_memcmp(const void *s1, const void *s2, size_t n);

@@ -6,7 +6,7 @@
 #    By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 15:48:58 by cbeauvoi          #+#    #+#              #
-#    Updated: 2017/08/30 19:19:30 by cbeauvoi         ###   ########.fr        #
+#    Updated: 2017/09/04 18:16:18 by cbeauvoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_NAME = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c \
 		   ft_lstnew.c ft_lstadd.c ft_lstdisplay.c ft_lstdelone.c ft_lstclear.c \
 		   ft_lstdel.c ft_lstiter.c ft_add_fonction.c ft_lstmap.c ft_getlastmaillon.c \
 		   ft_lstreverse.c get_next_line.c ft_lstselectsort.c ft_strnchr.c ft_arraychr.c \
-		   put_maj.c ft_freejoin.c
+		   put_maj.c ft_freejoin.c ft_arraysize.c
 
 EXE_NAME = a.out
 

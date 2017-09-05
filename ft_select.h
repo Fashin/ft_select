@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 18:47:43 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 22:32:09 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 15:20:01 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 # include "libft/libft.h"
+
+# define NF_ARG "ft_select : you need set up arguments"
 
 typedef	struct		s_file
 {
@@ -41,6 +43,7 @@ void				clean_screen(void);
 void				print_selected(t_list *list);
 int					launch_select(t_list *list);
 int					ft_pointchar(int c);
-int					ft_exit(t_list **list);
+int					ft_exit(t_list **list, int print);
+int					quit(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:10:01 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 22:24:57 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 15:23:19 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int				launch_select(t_list *list)
 		else if (buff[0] == 4)
 			return (0);
 		else if (buff[0] == 27)
-			return (ft_exit(&list));
+			return (ft_exit(&list, 0));
+		else if (buff[0] == 10)
+			return (ft_exit(&list, 1));
 		ft_bzero(buff, 3);
 	}
 	return (0);

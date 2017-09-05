@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:17:14 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 22:01:46 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 15:52:50 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ t_list			*space(t_list *list)
 		list = list->next;
 	}
 	list = ret;
+	list = down(list);
 	print_list(list);
 	return (list);
 }

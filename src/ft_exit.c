@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 22:23:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 15:29:04 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 15:38:00 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			ft_exit(t_list **list, int print)
 		print_selected(*list);
 	ft_lstdel(list, free_my_list);	
 	tputs(tgetstr("ve", NULL), 1, ft_pointchar);
+	clean_screen();
 	return (1);
 }
 

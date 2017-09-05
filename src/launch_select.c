@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:10:01 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 15:23:19 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 16:06:54 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 static int		is_arrow(char buff[3])
 {
 	if (buff[0] == 27 && buff[1] == '[')
+		return (1);
+	return (0);
+}
+
+static int		is_delete(char buff[3])
+{
+	if ((buff[0] == 27 && buff[1] == 91)
+		|| (buff[0] == 127))
 		return (1);
 	return (0);
 }
@@ -34,12 +42,12 @@ int				launch_select(t_list *list)
 			list = arrow[buff[2] - 65](list);
 		else if (buff[0] == 32)
 			list = space(list);
-		else if (buff[0] == 4)
-			return (0);
-		else if (buff[0] == 27)
+		else if ((buff[0] == 27 && buff[1] != 91) || !(list->content))
 			return (ft_exit(&list, 0));
-		else if (buff[0] == 10)
+		else if (buff[0] == 10 || buff[0] == 4)
 			return (ft_exit(&list, 1));
+		else if (is_delete(buff) && list->content)
+			list_remove(&list, ((t_file *)get_actual(list)->content)->name);
 		ft_bzero(buff, 3);
 	}
 	return (0);

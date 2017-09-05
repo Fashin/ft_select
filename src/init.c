@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 15:19:47 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 15:19:15 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 17:11:50 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ static int				apply_cannonique(struct termios term)
 	return (0);
 }
 
-t_list					*create_my_list(char **input)
+static void				set_signal(void)
+{
+	signal(SIGWINCH, windows_resisz);
+}
+
+static t_list			*create_my_list(char **input)
 {
 		t_list		*list;
 		t_file		file;
@@ -39,6 +44,7 @@ t_list					*create_my_list(char **input)
 			ft_lstadd(&list, ft_lstnew((void *)&file, sizeof(t_file)));
 			i--;
 		}
+		set_signal();
 		return (list);
 }
 

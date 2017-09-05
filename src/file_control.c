@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:53:13 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/04 22:09:48 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/05 18:17:58 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ t_list		*get_last(t_list *list)
 	while (list->next->content)
 		list = list->next;
 	return (list);
+}
+
+void		windows_resisz(int size, t_list *list)
+{
+	struct winsize		new_size;
+	(void)size;
+	if (ioctl(0, TIOCGWINSZ, &new_size) < 0)
+		return ;
+	print_resized_list(new_size.ws_row, new_size.ws_col, list);
 }
 
 int			ft_pointchar(int c)

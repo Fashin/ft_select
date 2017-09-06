@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:11:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 18:18:27 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/06 22:10:21 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,45 @@ void			print_selected(t_list *list)
 	ft_putchar('\n');
 }
 
-void			print_resized_list(int row, int collumn, t_list *list)
+void			new_print_list(t_list *list, int col)
 {
-	(void)row;
+	int		i;
+	char	*name;
+
+	clean_screen();
+	while (list->content)
+	{
+		i = -1;
+		while (++i <= col)
+		{
+			name = ((t_file *)list->content)->name;
+			ft_putstr_fd(name, 0);
+			ft_space_padding((info->min_collumn - ft_strlen(name)) + 1);
+			list = list->next;
+		}
+		if (list->content)
+			ft_putchar_fd('\n', 0);
+	}
+}
+
+void			print_resized_list(int row, int collumn)
+{
+	int			nbr_col;
+	int			i;
+	t_list		*tmp;
+
 	(void)collumn;
-	(void)list;
+	nbr_col = 0;
+	i = -1;
+	tmp = info->list;
+	while (tmp->content)
+	{
+		++i;
+		if (i == row)
+			nbr_col++;	
+		tmp = tmp->next;
+	}
+	new_print_list(info->list, nbr_col);
 }
 
 void			print_list(t_list *list)

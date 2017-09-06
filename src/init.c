@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 15:19:47 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 17:11:50 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/06 18:33:59 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ static void				set_signal(void)
 	signal(SIGWINCH, windows_resisz);
 }
 
+static void				init_info(int row, int collumn)
+{
+	if (!(info = (t_info *)malloc(sizeof(t_info))))
+		exit(-1);
+	info->min_row = row;
+	info->min_collumn = collumn;
+}
+
 static t_list			*create_my_list(char **input)
 {
 		t_list		*list;
@@ -36,6 +44,7 @@ static t_list			*create_my_list(char **input)
 
 		list = ft_lstnew(NULL, 0);
 		i = ft_getabsize(input) - 1;
+		init_info(i, get_biggest_string(input));
 		while (i >= 0)
 		{
 			file.name = ft_strdup(input[i]);

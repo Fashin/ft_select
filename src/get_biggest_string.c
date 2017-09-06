@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_select.c                                        :+:      :+:    :+:   */
+/*   get_biggest_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/30 18:47:10 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/06 18:54:37 by cbeauvoi         ###   ########.fr       */
+/*   Created: 2017/09/05 18:38:23 by cbeauvoi          #+#    #+#             */
+/*   Updated: 2017/09/05 18:54:00 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_select.h"
 
-int					main(int ac, char **av)
+int			get_biggest_string(char **my_tab)
 {
-	t_list		*list;
+	int		i;
+	int		max;
+	int		tmp;
 
-	if (ac < 2)
-		return(quit(NF_ARG));
-	if (!(list = init(av + 1)))
-		return (-1);
-	info->list = list;
-	return (launch_select(list));
+	i = -1;
+	max = 0;
+	while (my_tab[++i])
+		if ((tmp = ft_strlen(my_tab[i])) > max)
+			max = tmp;
+	return (max);
 }

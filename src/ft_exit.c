@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 22:23:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 18:17:40 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/06 23:55:40 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,19 @@ void		free_my_list(void *content, size_t size)
 	free(content);
 	content = NULL;
 	size = 0;
+}
+
+void		ft_error(char *str, int stop)
+{
+	clean_screen();
+	ft_putstr_fd(str, 0);
+	if (stop)
+		exit(-1);
+}
+
+void		stop_term(int c)
+{
+	printf("return = %d\n", c);
 }
 
 int			ft_exit(t_list **list, int print)

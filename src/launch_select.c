@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:10:01 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 16:06:54 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 00:16:19 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int				launch_select(t_list *list)
 
 	arrow[0] = up;
 	arrow[1] = down;
-	print_list(list);
+	print_list();
 	while (1)
 	{
 		read(0, buff, 3);

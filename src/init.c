@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 15:19:47 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/06 18:33:59 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 00:14:43 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,22 @@ static int				apply_cannonique(struct termios term)
 static void				set_signal(void)
 {
 	signal(SIGWINCH, windows_resisz);
+	//signal(SIGTERM, stop_term);
+	//signal(SIGKILL, stop_term);
+	signal(SIGTSTP, pause_term);
+	signal(SIGCONT, launch_term);
 }
 
-static void				init_info(int row, int collumn)
+static void				init_info(int row, int collumn, struct termios term)
 {
 	if (!(info = (t_info *)malloc(sizeof(t_info))))
 		exit(-1);
 	info->min_row = row;
 	info->min_collumn = collumn;
+	info->term = term;
 }
 
-static t_list			*create_my_list(char **input)
+static t_list			*create_my_list(char **input, struct termios term)
 {
 		t_list		*list;
 		t_file		file;
@@ -44,7 +49,7 @@ static t_list			*create_my_list(char **input)
 
 		list = ft_lstnew(NULL, 0);
 		i = ft_getabsize(input) - 1;
-		init_info(i, get_biggest_string(input));
+		init_info(i, get_biggest_string(input), term);
 		while (i >= 0)
 		{
 			file.name = ft_strdup(input[i]);
@@ -71,5 +76,5 @@ t_list					*init(char **input)
 	if (!(apply_cannonique(term)))
 		return (NULL);
 	tputs(tgetstr("vi", NULL), 1, ft_pointchar);
-	return (create_my_list(input));
+	return (create_my_list(input, term));
 }

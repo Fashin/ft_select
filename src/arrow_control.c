@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:17:14 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/05 15:52:50 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/06 23:59:55 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_list			*up(t_list *list)
 		list = list->next;
 	}
 	list = ret;
-	print_list(list);
+	print_list();
 	return (list);
 }
 
@@ -53,7 +53,7 @@ t_list			*down(t_list *list)
 		list = list->next;
 	}
 	list = ret;
-	print_list(list);
+	print_list();
 	return (list);
 }
 
@@ -75,6 +75,6 @@ t_list			*space(t_list *list)
 	}
 	list = ret;
 	list = down(list);
-	print_list(list);
+	print_list();
 	return (list);
 }

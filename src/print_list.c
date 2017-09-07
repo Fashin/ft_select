@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:11:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 00:00:37 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:49:11 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void			new_print_list(t_list *list, int col)
 		{
 			name = ((t_file *)list->content)->name;
 			print_name((t_file *)list->content);
-			ft_space_padding((info->min_collumn - ft_strlen(name)) + 1);
+			ft_space_padding((g_info->min_collumn - ft_strlen(name)) + 1);
 			list = list->next;
 		}
 		if (list->content)
@@ -72,18 +72,18 @@ void			print_resized_list(int row, int collumn)
 
 	nbr_col = 1;
 	i = -1;
-	tmp = info->list;
+	tmp = g_info->list;
 	while (tmp->content)
 	{
 		++i;
 		if (i == row)
-			nbr_col++;	
+			nbr_col++;
 		tmp = tmp->next;
 	}
-	if (collumn < (info->min_collumn * nbr_col) + 2)
+	if (collumn < (g_info->min_collumn * nbr_col) + 2)
 		ft_error(NF_SPACE, 0);
 	else
-		new_print_list(info->list, nbr_col);
+		new_print_list(g_info->list, nbr_col);
 }
 
 void			print_list(void)

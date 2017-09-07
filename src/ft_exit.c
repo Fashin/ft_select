@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 22:23:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 20:49:43 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:54:35 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		ft_error(char *str, int stop)
 		exit(-1);
 }
 
-int			ft_exit(t_list **list, int print)
+void		ft_exit(t_list **list, int print)
 {
 	clean_screen();
 	if (print)
@@ -37,7 +37,7 @@ int			ft_exit(t_list **list, int print)
 	ft_lstdel(list, free_my_list);
 	tputs(tgetstr("ve", NULL), 0, ft_pointchar);
 	tcsetattr(0, TCSANOW, &(g_info->term));
-	return (1);
+	exit(0);
 }
 
 int			quit(char *str)

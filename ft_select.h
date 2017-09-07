@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 18:47:43 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 20:47:25 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:54:57 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void					ft_error(char *str, int stop);
 void					stop_term(int c);
 void					pause_term(int c);
 void					launch_term(int c);
+void					ft_exit(t_list **list, int print);
 int						launch_select(t_list *list);
 int						ft_pointchar(int c);
-int						ft_exit(t_list **list, int print);
 int						quit(char *str);
 int						get_biggest_string(char **my_tab);
 

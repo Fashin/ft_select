@@ -6,11 +6,11 @@
 #    By: cbeauvoi <cbeauvoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 11:08:40 by cbeauvoi          #+#    #+#              #
-#    Updated: 2017/09/07 00:04:09 by cbeauvoi         ###   ########.fr        #
+#    Updated: 2017/09/07 19:10:17 by cbeauvoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = ft_select
 
 CFLAGS += -Wall -Wextra -Werror
 

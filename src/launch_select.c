@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:10:01 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 00:16:19 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 19:06:45 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				launch_select(t_list *list)
 			list = space(list);
 		else if ((buff[0] == 27 && buff[1] != 91) || !(list->content))
 			return (ft_exit(&list, 0));
-		else if (buff[0] == 10 || buff[0] == 4)
+		else if (buff[0] == 13 || buff[0] == 4)
 			return (ft_exit(&list, 1));
 		else if (is_delete(buff) && list->content)
 			list_remove(&list, ((t_file *)get_actual(list)->content)->name);

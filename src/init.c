@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 15:19:47 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 00:14:43 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/07 18:43:27 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ static int				apply_cannonique(struct termios term)
 static void				set_signal(void)
 {
 	signal(SIGWINCH, windows_resisz);
-	//signal(SIGTERM, stop_term);
-	//signal(SIGKILL, stop_term);
+	signal(SIGINT, stop_term);
 	signal(SIGTSTP, pause_term);
 	signal(SIGCONT, launch_term);
 }

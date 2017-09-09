@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 20:12:45 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 19:11:25 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:05:30 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static int			check_first_maillon(t_list **list, char *name)
 	{
 		tmp = *list;
 		*list = (*list)->next;
+		g_info->list = *list;
 		ft_lstdelone(&tmp, &free_my_list);
 		print_list();
 		return (1);

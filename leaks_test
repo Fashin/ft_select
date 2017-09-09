@@ -1,0 +1,1 @@
+while true; do leaks ft_select | grep "leaks for"; done;

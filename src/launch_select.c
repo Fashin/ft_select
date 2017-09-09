@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:10:01 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 20:55:14 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:06:05 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 static int		is_arrow(char buff[3])
 {
-	if (buff[0] == 27 && buff[1] == '[')
+	if ((buff[0] == 27 && buff[1] == 91 && buff[2] == 66)
+		|| (buff[0] == 27 && buff[1] == 91 && buff[2] == 65))
 		return (1);
 	return (0);
 }
 
 static int		is_delete(char buff[3])
 {
-	if ((buff[0] == 27 && buff[1] == 91)
+	if ((buff[0] == 27 && buff[1] == 91 && buff[2] == 51)
 		|| (buff[0] == 127))
 		return (1);
 	return (0);

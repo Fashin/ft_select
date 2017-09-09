@@ -6,7 +6,7 @@
 /*   By: cbeauvoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 16:11:07 by cbeauvoi          #+#    #+#             */
-/*   Updated: 2017/09/07 20:57:33 by cbeauvoi         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:59:07 by cbeauvoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,10 @@ void			print_resized_list(int row, int collumn)
 	{
 		++i;
 		if (i == row)
+		{
 			nbr_col++;
+			i = -1;
+		}
 		tmp = tmp->next;
 	}
 	if (collumn < (g_info->min_collumn * nbr_col) + 1)
